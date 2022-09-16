@@ -16,7 +16,6 @@ def guess_and_check():
     letter = input('Condemned, choose a letter: ')
     if word.__contains__(letter):
         print('The letter is in the word')
-        #here we need something that will return an index 
         reveal_word()
         return 1
     else:
@@ -24,11 +23,13 @@ def guess_and_check():
         reveal_word()
         return 0
 
-life = 9 
+correct_letters = 0
+life = 8 
 while life > 0:
     if guess_and_check() == 0:
         life -= 1
         print('You have ', life, 'life left')
     if life <= 0:
-        print('Player 2 you lose')
-
+        print('EXECUTED')
+    if not blank_list.__contains__('__'):
+        print('OJ\'d his ass')
