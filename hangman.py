@@ -32,4 +32,4 @@ while life > 0:
     if life <= 0:
         print('EXECUTED')
     if not blank_list.__contains__('__'):
-        print('OJ\'d his ass')
+        print('The Condemned is found innocent!')
