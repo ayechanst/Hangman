@@ -1,25 +1,17 @@
 word = input('Executioner, choose a word: ')
+list_word = list(word)
+blank_list = [] 
+for i in list_word:
+    blank_list.append('__') 
 
 def guess_and_check():
 
     def reveal_word():
-        list_word = list(word)
-        index = list_word[len(list_word) -1] 
-        blank_list = [] 
-        for i in list_word:
-            blank_list.append('__') 
-        #print(blank_list)
-        letter_count = list_word.count(letter) 
-        print('letter count is ', letter_count)
+        for (index, char) in enumerate(list_word):
+            if char == letter:
+                blank_list[index] = letter        
 
-        def help_reveal(index):
-            index = range(0, len(word))
-            if list_word[index] == letter:
-                blank_list[index] = letter
-
-        mixed_list = list(map(help_reveal, list_word))
-        print(mixed_list)      
-                
+        print(blank_list)
 
     letter = input('Condemned, choose a letter: ')
     if word.__contains__(letter):
